@@ -1,19 +1,18 @@
 import React from "react";
 import '../StyleSheet/Testimonies.css';
 
-function Testimonie() {
+function Testimonie(props) {
   return(
     <div className='container-testimonie'>
       <img 
       className='image-testimonie'
-      src={require('../Image/placeHolder.jpg')}
+      src={require(`../Image/${props.image}`)}
       alt = 'foto de dador de testimonio'
       />
       <div className='container-testimonie-text'>
-        <p className='testimonie-name'>Juancito Rodigues en Argentina</p>
-        <p className='role-testimonie'>Ingeniero de Software en TurtleSoft</p>
-        <p className='testimonie-text'>Yo era un aventurero, viaje de aqui a aca,
-         hasta que aprendi react, ahora, soy un desarrollador hecho y derecho</p>
+        <p className='testimonie-name'>{props.name} en {props.country}</p>
+        <p className='role-testimonie'>{props.role} en {props.corporation}</p>
+        <p className='testimonie-text'>"{props.testimonie}"</p>
       </div>
     </div>
   );
